@@ -1,0 +1,74 @@
+{
+    "questions": [
+      {
+        "text": "How do you handle challenges?",
+        "answers": [
+          { "text": "I tackle them head-on with full energy", "snack": "Clif Bar" },
+          { "text": "I take a strategic and balanced approach.", "snack": "Triscuit" },
+          { "text": "I prefer to stay cool under pressure.", "snack": "Halls"},
+          { "text": "I turn challenges into something fun", "snack": "Sour Patch Kids" }
+        ],
+        "questionNumber": 1
+      },
+      {
+        "text": "Which phrase best describes you?",
+        "answers": [
+          { "text": "Bold and daring.", "snack": "5 Star" },
+          { "text": "Classic and timeless", "snack": "Cadbury" },
+          { "text": "Sweet but with an unexpected twist.", "snack": "Sour Patch Kids" },
+          { "text": "A warm and reliable friend.", "snack": "Honey Maid" }
+        ],
+        "questionNumber": 2
+      },
+      {
+        "text": "Whats your ideal weekend activity?",
+        "answers": [
+          { "text": "An outdoor adventure or a workout", "snack": "Clif Bar" },
+          { "text": "A cozy morning with coffee and a book", "snack": "BelVita" },
+          { "text": "Spending time baking or doing something creative", "snack": "Tates Bake Shop" },
+          { "text": "Hosting a fun gathering with friends", "snack": "Ritz" }
+        ],
+        "questionNumber": 3
+      },
+      {
+        "text": "Whats your go-to drink?",
+        "answers": [
+          { "text": "Something refreshing and fruity.", "snack": "Tang" },
+          { "text": "A rich, creamy beverage", "snack": "Bournvita" },
+          { "text": "A fancy, well-crafted coffee.", "snack": "Philadelphia Cream Cheese" },
+          { "text": "A classic glass of milk", "snack": "Milka" }
+        ],
+        "questionNumber": 4
+      },
+      {
+        "text": "How do your friends describe you?",
+        "answers": [
+          { "text": "Fun and full of surprises.", "snack": "Oreo" },
+          { "text": "Sophisticated and refined.", "snack": "Toblerone" },
+          { "text": "Dependable and grounded.", "snack": "Wheat Thins" },
+          { "text": "Always on the go.", "snack": "Chips Ahoy!" }
+        ],
+        "questionNumber": 5
+      },
+      {
+        "text": "Whats your dream travel destination?",
+        "answers": [
+          { "text": "A thrilling, fast-paced city", "snack": "5 Star" },
+          { "text": "A peaceful, countryside retreat", "snack": "Milka" },
+          { "text": "A cultural and historic hotspot.", "snack": "Toblerone" },
+          { "text": "A tropical beach paradise.", "snack": "Tang" }
+        ],
+        "questionNumber": 6
+      },
+      {
+        "text": "Whats your go-to snack vibe?",
+        "answers": [
+          { "text": "Indulgent and luxurious", "snack": "Cadbury" },
+          { "text": "Wholesome and balanced.", "snack": "Triscuit" },
+          { "text": "Playful and fun.", "snack": "Sour Patch Kids" },
+          { "text": "Light but satisfying.", "snack": "BelVita" }
+        ],
+        "questionNumber": 7
+      }
+    ]
+}
