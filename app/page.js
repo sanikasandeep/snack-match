@@ -98,7 +98,7 @@ export default function Home() {
 
       {/* Slogan */}
       <h1 style={{ fontSize: "2.5rem", fontWeight: "bold", marginBottom: "2rem" }}>
-        Find your snack match!
+        Take this quiz and find your snack match!
       </h1>
 
       {/* Start Quiz Button */}

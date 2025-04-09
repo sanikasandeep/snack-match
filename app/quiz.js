@@ -81,6 +81,31 @@ export default function Quiz() {
 
   const progress = ((currentQuestion + 1) / questions.length) * 100;
 
+  const snackImages = {
+    "Cadbury": "/Cadbury.jpg",
+    "Oreo": "/oreo.jpeg",
+    "Clif Bar": "/clif.jpeg",
+    "Sour Patch Kids": "/sour_patch_kids.jpg",
+    "BelVita": "/belvita.jpg",
+    "Tang": "/tang.jpeg",
+    "Toblerone": "/toblerone.jpg",
+    "Triscuit": "/triscuit.jpg",
+    "Wheat Thins": "/wheat_thins.jpeg",
+    "Tates Bake Shop": "/tates_bake_shop.jpeg",
+    "Ritz": "/ritz.jpg",
+    "Philadelphia Cream Cheese": "/philadelphia.jpg",
+    "Oreo": "/oreo.jpeg",
+    "Milka": "/milka.jpeg",
+    "Honey Maid": "/honey_maid.jpg",
+    "Halls": "/halls.jpeg",
+    "Clif Bar": "/clif.jpeg",
+    "Chips Ahoy!": "/chips_ahoy.jpeg",
+    "Cadbury": "/Cadbury.jpg",
+    "Bournvita": "/bournvita.jpeg",
+    "BelVita": "/belvita.jpg",
+    "5 Star": "/5_star.webp"
+  }
+
   return (
     <div
       style={{
@@ -102,9 +127,29 @@ export default function Quiz() {
 
       {finalSnack ? (
         <>
-          <h2 style={{ fontSize: "2rem", color: "#6a1b9a" }}>
-            Your snack match is: {finalSnack} 🎉
-          </h2>
+          <div style={{ textAlign: "center", marginTop: "2rem" }}>
+            <p style={{ fontSize: "1.5rem", color: "#6a1b9a", fontWeight: "500" }}>
+              Your snack match is:
+            </p>
+            <h1 style={{ fontSize: "3rem", fontWeight: "bold", color: "#6a1b9a", marginTop: "10px" }}>
+              {finalSnack} 🎉
+            </h1>
+          </div>
+          {snackImages[finalSnack] && (
+            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+              <Image
+                src={snackImages[finalSnack]}
+                alt={finalSnack}
+                width={250}
+                height={250}
+                style={{
+                  objectFit: "contain",
+                  borderRadius: "16px",
+                  maxWidth: "90vw",
+                }}
+              />
+            </div>
+          )}
           <Button
             variant="contained"
             onClick={() => window.location.reload()}
