@@ -96,9 +96,9 @@ export default function Quiz() {
     >
       {finalSnack && <Confetti width={width} height={height} gravity={0.1} numberOfPieces={200} />}
 
-      <h1 style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#6a1b9a", marginBottom: "20px" }}>
+      {/*<h1 style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#6a1b9a", marginBottom: "20px" }}>
         Find your snack match!
-      </h1>
+      </h1>*/}
 
       {finalSnack ? (
         <>
@@ -114,14 +114,14 @@ export default function Quiz() {
               backgroundColor: "#6a1b9a",
               color: "white",
               borderRadius: "25px",
-              boxShadow: "0px 4px 10px rgba(106, 27, 154, 0.4)", // White glow effect
+              boxShadow: "0px 4px 10px rgba(106, 27, 154, 0.4)", // white glow effect
               transition: "all 0.3s ease",
               "&:hover": {
                 backgroundColor: "#7b2cbf",
-                boxShadow: "0px 6px 15px rgba(106, 27, 154, 0.6)", // Slightly stronger glow
+                boxShadow: "0px 6px 15px rgba(106, 27, 154, 0.6)", // slightly stronger glow
               },
               "&:active": {
-                transform: "scale(0.95)", // Press-down effect
+                transform: "scale(0.95)", // press-down effect
               },
             }}
           >
@@ -151,7 +151,7 @@ export default function Quiz() {
                 position: "absolute",
                 top: "-7px", // adjust to move image vertically
                 left: `calc(${(currentQuestion / 7) * 100}% - 15px)`, // adjust -15px to center image
-                transition: "left 0.5s",
+                transition: "left 0.59s",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -160,41 +160,56 @@ export default function Quiz() {
               <Image
                 src="/cookie.png"
                 alt="Cookie"
-                width={30}
-                height={30}
+                width={40}
+                height={40}
                 style={{ borderRadius: "50%" }}
               />
             </Box>
           </Box>
-          <h3 style={{ fontSize: "1.2rem", marginBottom: "10px", color: "#6a1b9a" }}>
+          <h3 style={{ fontSize: "1.2rem", marginBottom: "10px", color: "#4e1f6f" }}>
             Question {currentQuestion + 1}
           </h3>
-
-          <h2 style={{ fontSize: "2rem", marginBottom: "20px" }}>
-            {questions[currentQuestion].text}
-          </h2>
+          <Box fontWeight='600'>
+            <h2 style={{ fontSize: "2rem", marginBottom: "20px", color: "#4e1f6f"}}>
+              {questions[currentQuestion].text}
+            </h2>
+          </Box>
           <RadioGroup
             onChange={(e) => handleAnswerSelect(e.target.value)}
             style={{ width: "100%", maxWidth: "600px" }}
           >
-            {questions[currentQuestion].answers.map((option) => (
+            {questions[currentQuestion].answers.map((option, index) => {
+            let backgroundColor = "white"; // Default background
+
+            // Assign background colors based on index
+            if (index === 0) {
+              backgroundColor = "#eae4ee"; // A
+            } else if (index === 1) {
+              backgroundColor = "#faecda"; // B
+            } else if (index === 2) {
+              backgroundColor = "#e1ecdf"; // C
+            } else if (index === 3) {
+              backgroundColor = "#dde8f1"; // D
+            }
+
+            return (
               <Box
                 key={option.text}
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  backgroundColor: "white",
+                  backgroundColor: backgroundColor, // Apply dynamic background color
                   borderRadius: "15px",
                   padding: "12px",
                   marginBottom: "10px",
-                  boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Soft glow
+                  boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
                   transition: "all 0.3s ease",
                   "&:hover": {
-                    transform: "translateY(-3px)", // Lift effect
-                    boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.2)", // Stronger glow
+                    transform: "translateY(-3px)",
+                    boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.2)",
                   },
                   "&:active": {
-                    transform: "scale(0.98)", // Press down effect
+                    transform: "scale(0.98)",
                   },
                 }}
               >
@@ -207,7 +222,8 @@ export default function Quiz() {
                   style={{ width: "100%", fontSize: "1.2rem", color: "#555" }}
                 />
               </Box>
-            ))}
+              );
+            })}
           </RadioGroup>
           <div style={{ display: "flex", justifyContent: "space-between", width: "100%", maxWidth: "600px", marginTop: "20px" }}>
             {/* Back Button */}

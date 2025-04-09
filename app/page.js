@@ -7,6 +7,50 @@ import { Button } from "@mui/material";
 export default function Home() {
   const [startQuiz, setStartQuiz] = useState(false);
 
+  const scatteredImages = [
+    { src: "/small_bar.png", top: "5%", left: "10%" },
+    { src: "/small_candy.png", top: "20%", left: "80%" },
+    { src: "/small_chocolate.png", top: "70%", left: "5%" },
+    { src: "/small_cracker.png", top: "60%", left: "85%" },
+    { src: "/small_cupcake.png", top: "20%", left: "35%" },
+    { src: "/small_drink.png", top: "80%", left: "50%" },
+    { src: "/small_bar.png", top: "5%", left: "10%" },
+    { src: "/small_candy.png", top: "20%", left: "80%" },
+    { src: "/small_chocolate.png", top: "70%", left: "5%" },
+    { src: "/small_cracker.png", top: "60%", left: "85%" },
+    { src: "/small_cupcake.png", top: "20%", left: "35%" },
+    { src: "/small_drink.png", top: "80%", left: "50%" },
+    { src: "/small_candy.png", top: "40%", left: "17%" },
+    { src: "/small_candy.png", top: "40%", left: "17%" },
+    { src: "/small_drink.png", top: "9%", left: "65%" },
+    { src: "/small_drink.png", top: "9%", left: "65%" },
+    { src: "/small_bar.png", top: "90%", left: "72%" },
+    { src: "/small_bar.png", top: "90%", left: "72%" },
+    { src: "/small_cracker.png", top: "83%", left: "25%" },
+    { src: "/small_cracker.png", top: "83%", left: "25%" },
+    { src: "/small_chocolate.png", top: "40%", left: "95%" },
+    { src: "/small_chocolate.png", top: "40%", left: "95%" },
+    // Add more if needed
+  ];
+
+  {scatteredImages.map((img, index) => (
+    <Image
+      key={index}
+      src={img.src}
+      alt={`snack-${index}`}
+      width={40}
+      height={40}
+      style={{
+        position: "absolute",
+        top: img.top,
+        left: img.left,
+        pointerEvents: "none",
+        filter: "contrast(0) brightness(2)", // Makes it white
+        opacity: 1,
+      }}
+    />
+  ))}
+
   if (startQuiz) {
     return <Quiz />;
   }
@@ -25,12 +69,30 @@ export default function Home() {
         padding: "2rem",
       }}
     >
+      {/* Scattered PNGs */}
+      {scatteredImages.map((img, index) => (
+        <Image
+          key={index}
+          src={img.src}
+          alt={`snack-${index}`}
+          width={40}
+          height={40}
+          style={{
+            position: "absolute",
+            top: img.top,
+            left: img.left,
+            opacity: 0.8,
+            pointerEvents: "none", // prevents hover blocking
+          }}
+        />
+      ))}
+
       {/* Logo */}
       <Image
         src="/mdlz_logo.jpeg"
         alt="Snack Match Logo"
-        width={200}
-        height={200}
+        width={300}
+        height={300}
         style={{ marginBottom: "1rem", borderRadius: "1rem" }}
       />
 
@@ -44,7 +106,7 @@ export default function Home() {
         variant="contained"
         style={{
           backgroundColor: "white",
-          color: "#800080",
+          color: "#4e1f6f",
           fontWeight: "bold",
           fontSize: "1.2rem",
           borderRadius: "30px",
